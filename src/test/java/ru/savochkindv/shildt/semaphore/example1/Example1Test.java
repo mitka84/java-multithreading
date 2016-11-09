@@ -19,8 +19,8 @@ public class Example1Test {
         DecrementThread decrementThread = new DecrementThread(semaphore, resource);
         incrementThread.join();
         decrementThread.join();
-        assertTrue(resource.isTopReached());
-        assertTrue(resource.isBottomReached());
+        assertTrue("Верхняя граница не достигнута", resource.isTopReached());
+        assertTrue("Нижняя граница не достигнута", resource.isBottomReached());
     }
 
 }
